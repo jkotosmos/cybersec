@@ -1,4 +1,4 @@
-/* IAIDO.SEC — навигация, скролл-анимация клинка, вспомогательный UI */
+/* IAIDO.SEC — навигация, скролл-эффекты, вспомогательный UI */
 (function(){
   'use strict';
 
@@ -40,7 +40,7 @@
 
   /* ---------- reveal on scroll ---------- */
   var revealTargets = document.querySelectorAll(
-    '.virtue, .arsenal-cat, .seal-card, .waza-panels, .oath-inner, .section-head'
+    '.virtue, .arsenal-cat, .waza-panels, .oath-inner, .section-head'
   );
   revealTargets.forEach(function(el){ el.classList.add('reveal'); });
 
@@ -56,53 +56,6 @@
     revealTargets.forEach(function(el){ io.observe(el); });
   } else {
     revealTargets.forEach(function(el){ el.classList.add('is-in'); });
-  }
-
-  /* ---------- scroll-linked katana draw ---------- */
-  var stage = document.getElementById('draw');
-  var sticky = stage ? stage.querySelector('.draw-sticky') : null;
-  var sword = document.getElementById('bladeGroup');
-  var saya = document.getElementById('sayaGroup');
-  var caps = document.querySelectorAll('.draw-cap');
-
-  if (stage && sticky){
-    if (reduceMotion){
-      stage.style.height = '100svh';
-      saya && saya.style.setProperty('transform', 'translateY(700px)');
-      sticky.classList.add('is-complete');
-    } else {
-      var ticking = false;
-
-      var updateDraw = function(){
-        ticking = false;
-        var rect = stage.getBoundingClientRect();
-        var total = stage.offsetHeight - window.innerHeight;
-        var progress = total > 0 ? (-rect.top) / total : 0;
-        progress = Math.min(1, Math.max(0, progress));
-
-        var eased = progress < 0.5
-          ? 4 * progress * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-        if (saya) saya.style.transform = 'translateY(' + (eased * 700).toFixed(1) + 'px)';
-
-        sticky.classList.toggle('is-complete', progress > 0.94);
-
-        var ranges = [[0.04, 0.29], [0.37, 0.62], [0.70, 1.01]];
-        caps.forEach(function(cap){
-          var stepIndex = parseInt(cap.getAttribute('data-cap'), 10);
-          var r = ranges[stepIndex - 1];
-          cap.classList.toggle('is-visible', progress >= r[0] && progress < r[1]);
-        });
-      };
-
-      var onScroll = function(){
-        if (!ticking){ requestAnimationFrame(updateDraw); ticking = true; }
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      updateDraw();
-    }
   }
 
   /* ---------- preview strip cards open matching tool tab ---------- */

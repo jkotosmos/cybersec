@@ -222,37 +222,9 @@ img,svg{ display:block; max-width:100%; }
 }
 @keyframes cueBob{ 0%,100%{ transform: translate(-50%,0);} 50%{ transform: translate(-50%,8px);} }
 
-/* =========================== draw stage / katana =========================== */
-.draw-stage{ position: relative; height: 340vh; background: var(--bg); }
-.draw-sticky{
-  position: sticky; top:0; height: 100svh; overflow: hidden;
-  display:flex; align-items:center; justify-content:center;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 45%, var(--fog), transparent 65%),
-    radial-gradient(ellipse 140% 100% at 50% 100%, rgba(0,0,0,.75), transparent 50%),
-    var(--bg);
-}
-.katana{ height: min(92svh, 900px); width: auto; filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); }
-
-#kissakiGlint{ transition: opacity .6s ease; }
-.draw-sticky.is-complete #kissakiGlint{ opacity: .9; animation: glintPulse 2.4s ease-in-out infinite; }
-@keyframes glintPulse{ 0%,100%{ opacity:.55;} 50%{ opacity: 1;} }
-
-.draw-captions{
-  position:absolute; left: 50%; top: 8%; transform: translateX(-50%);
-  width: min(92vw, 620px); text-align:center; z-index: 3; pointer-events:none;
-}
-.draw-cap{
-  font-family: var(--serif); color: var(--paper); font-size: clamp(1.1rem, 2.6vw, 1.6rem);
-  opacity: 0; transform: translateY(10px); transition: opacity .3s var(--ease), transform .3s var(--ease);
-  position:absolute; inset: 0; display:flex; align-items:center; justify-content:center; gap:.5em;
-}
-.draw-cap.is-visible{ opacity: 1; transform: translateY(0); }
-.draw-cap .jp{ font-size: 1.3em; }
-
 /* =========================== section shells =========================== */
 main > section{ position: relative; padding: 7em 1.5em; max-width: var(--container); margin: 0 auto; }
-.bushido, .dojo, .arsenal, .about{ border-top: 1px solid var(--line); }
+.bushido, .dojo, .arsenal{ border-top: 1px solid var(--line); }
 
 .section-head{ max-width: 680px; margin: 0 auto 3.5em; text-align:center; }
 .section-kicker{
@@ -421,16 +393,6 @@ input[type="checkbox"]{ accent-color: var(--red); width:15px; height:15px; }
 }
 .oath-sign{ font-family: var(--serif); color: var(--paper); font-size: 1.1rem; margin-top: 1.5em; }
 .oath-sign .jp{ display:block; margin-top:.4em; font-size: 1.3rem; color: var(--red-bright); }
-
-/* =========================== about =========================== */
-.about-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5em; margin-bottom: 2.5em; }
-.seal-card{ text-align:center; padding: 1.5em; }
-.seal{ width: 56px; height:56px; margin: 0 auto 1em; color: var(--red-bright); }
-.seal-card h3{ font-size: 1.1rem; }
-.seal-card p{ color: var(--text-dim); font-size: .88rem; }
-.about-credit{ text-align:center; color: var(--text-dim); font-size: .88rem; }
-
-@media (max-width: 720px){ .about-grid{ grid-template-columns: 1fr; } }
 
 /* =========================== footer =========================== */
 .site-footer{ border-top: 1px solid var(--line); padding: 3em 1.5em; text-align:center; }
