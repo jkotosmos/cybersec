@@ -6,6 +6,7 @@
 <title>居合 IAIDO — путь клинка в мире кода</title>
 <meta name="description" content="IAIDO — додзё цифровой безопасности. Философия бусидо, честные рабочие инструменты (генератор паролей, хеши, проверка утечек, шифры, JWT, разведка) и арсенал профессионала ИБ. Дизайн, разработка и защита — в одних руках.">
 <meta name="theme-color" content="#0b0a08">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://api.pwnedpasswords.com; object-src 'none'; base-uri 'self'; form-action 'self';">
 <meta property="og:title" content="居合 IAIDO — путь клинка в мире кода">
 <meta property="og:description" content="Додзё цифровой безопасности: философия самураев, честные инструменты ИБ и арсенал профессионала.">
 <meta property="og:type" content="website">
@@ -46,7 +47,7 @@
         <li><a href="#oath">Клятва</a></li>
       </ul>
     </nav>
-    <a href="https://github.com/jkotosmos/cybersec" target="_blank" rel="noopener" class="btn btn-pill header-cta">Исходники <span aria-hidden="true">→</span></a>
+    <a href="https://github.com/jkotosmos/cybersec" target="_blank" rel="noopener noreferrer" class="btn btn-pill header-cta">Исходники <span aria-hidden="true">→</span></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
       <span></span><span></span><span></span>
     </button>
@@ -250,7 +251,7 @@
           <textarea id="cipherText" class="text-area" rows="3" spellcheck="false"></textarea>
           <div class="tool-row cipher-key-row">
             <label class="field-label-inline" id="cipherKeyLabel" for="cipherKey">Сдвиг</label>
-            <input type="text" id="cipherKey" class="text-input" placeholder="3" style="max-width:220px">
+            <input type="text" id="cipherKey" class="text-input cipher-key-input" placeholder="3">
           </div>
           <div class="tool-row">
             <button class="btn btn-primary" id="cipherEncrypt" type="button">Зашифровать</button>
@@ -316,67 +317,83 @@
       <article class="arsenal-cat">
         <h3><span class="jp">斥候</span>Разведка</h3>
         <ul>
-          <li><a href="https://nmap.org/" target="_blank" rel="noopener">Nmap</a><p>Сканирование портов и сервисов — стандарт индустрии с 1997 года.</p></li>
-          <li><a href="https://github.com/owasp-amass/amass" target="_blank" rel="noopener">Amass</a><p>Картирование поверхности атаки и enumeration поддоменов.</p></li>
-          <li><a href="https://www.shodan.io/" target="_blank" rel="noopener">Shodan</a><p>Поисковик по устройствам, подключённым к интернету.</p></li>
+          <li><a href="tool.html?t=nmap">Nmap</a><p>Сканирование портов и сервисов — стандарт индустрии с 1997 года.</p></li>
+          <li><a href="tool.html?t=amass">Amass</a><p>Картирование поверхности атаки и enumeration поддоменов.</p></li>
+          <li><a href="tool.html?t=shodan">Shodan</a><p>Поисковик по устройствам, подключённым к интернету.</p></li>
+          <li><a href="tool.html?t=theharvester">theHarvester</a><p>Сбор email и поддоменов из открытых источников.</p></li>
+          <li><a href="tool.html?t=reconng">Recon-ng</a><p>Модульный фреймворк веб-разведки в стиле Metasploit.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">網</span>Веб</h3>
         <ul>
-          <li><a href="https://portswigger.net/burp" target="_blank" rel="noopener">Burp Suite</a><p>Перехват и манипуляция HTTP-трафиком, основной инструмент веб-пентестера.</p></li>
-          <li><a href="https://www.zaproxy.org/" target="_blank" rel="noopener">OWASP ZAP</a><p>Бесплатный сканер уязвимостей веб-приложений с открытым кодом.</p></li>
-          <li><a href="https://sqlmap.org/" target="_blank" rel="noopener">sqlmap</a><p>Автоматизированное обнаружение и эксплуатация SQL-инъекций.</p></li>
+          <li><a href="tool.html?t=burp">Burp Suite</a><p>Перехват и манипуляция HTTP-трафиком, основной инструмент веб-пентестера.</p></li>
+          <li><a href="tool.html?t=zap">OWASP ZAP</a><p>Бесплатный сканер уязвимостей веб-приложений с открытым кодом.</p></li>
+          <li><a href="tool.html?t=sqlmap">sqlmap</a><p>Автоматизированное обнаружение и эксплуатация SQL-инъекций.</p></li>
+          <li><a href="tool.html?t=nuclei">Nuclei</a><p>Быстрый шаблонный сканер уязвимостей нового поколения.</p></li>
+          <li><a href="tool.html?t=nikto">Nikto</a><p>Проверка веб-сервера на опасные файлы и устаревшее ПО.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">流</span>Сеть</h3>
         <ul>
-          <li><a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a><p>Глубокий анализ сетевых пакетов, эталон для форензики трафика.</p></li>
-          <li><a href="https://www.tcpdump.org/" target="_blank" rel="noopener">tcpdump</a><p>Лёгкий консольный перехват трафика для серверов и CI.</p></li>
+          <li><a href="tool.html?t=wireshark">Wireshark</a><p>Глубокий анализ сетевых пакетов, эталон для форензики трафика.</p></li>
+          <li><a href="tool.html?t=tcpdump">tcpdump</a><p>Лёгкий консольный перехват трафика для серверов и CI.</p></li>
+          <li><a href="tool.html?t=zeek">Zeek</a><p>Мониторинг сети с глубоким протокольным анализом.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">鍵</span>Пароли</h3>
         <ul>
-          <li><a href="https://hashcat.net/hashcat/" target="_blank" rel="noopener">Hashcat</a><p>GPU-ускоренный взлом хешей для аудита стойкости паролей.</p></li>
-          <li><a href="https://www.openwall.com/john/" target="_blank" rel="noopener">John the Ripper</a><p>Классический инструмент подбора паролей и аудита политик.</p></li>
+          <li><a href="tool.html?t=hashcat">Hashcat</a><p>GPU-ускоренный взлом хешей для аудита стойкости паролей.</p></li>
+          <li><a href="tool.html?t=john">John the Ripper</a><p>Классический инструмент подбора паролей и аудита политик.</p></li>
+          <li><a href="tool.html?t=hydra">Hydra</a><p>Перебор учётных данных для десятков сетевых протоколов.</p></li>
+          <li><a href="tool.html?t=cewl">CeWL</a><p>Генератор словарей паролей на основе содержимого сайта.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">影</span>OSINT</h3>
         <ul>
-          <li><a href="https://www.maltego.com/" target="_blank" rel="noopener">Maltego</a><p>Визуальный граф связей для расследований и разведки по открытым источникам.</p></li>
-          <li><a href="https://github.com/smicallef/spiderfoot" target="_blank" rel="noopener">SpiderFoot</a><p>Автоматизированный сбор OSINT из десятков источников сразу.</p></li>
+          <li><a href="tool.html?t=maltego">Maltego</a><p>Визуальный граф связей для расследований и разведки по открытым источникам.</p></li>
+          <li><a href="tool.html?t=spiderfoot">SpiderFoot</a><p>Автоматизированный сбор OSINT из десятков источников сразу.</p></li>
+          <li><a href="tool.html?t=sherlock">Sherlock</a><p>Поиск профилей по имени пользователя в сотнях соцсетей.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">検死</span>Форензика</h3>
         <ul>
-          <li><a href="https://www.autopsy.com/" target="_blank" rel="noopener">Autopsy</a><p>Цифровая криминалистика дисков и файловых систем.</p></li>
-          <li><a href="https://github.com/volatilityfoundation/volatility3" target="_blank" rel="noopener">Volatility 3</a><p>Анализ дампов оперативной памяти при расследовании инцидентов.</p></li>
+          <li><a href="tool.html?t=autopsy">Autopsy</a><p>Цифровая криминалистика дисков и файловых систем.</p></li>
+          <li><a href="tool.html?t=volatility">Volatility 3</a><p>Анализ дампов оперативной памяти при расследовании инцидентов.</p></li>
+          <li><a href="tool.html?t=ftkimager">FTK Imager</a><p>Стандарт создания судебных образов диска.</p></li>
+          <li><a href="tool.html?t=kape">KAPE</a><p>Быстрый сбор и разбор криминалистических артефактов.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">突</span>Red Team</h3>
         <ul>
-          <li><a href="https://www.metasploit.com/" target="_blank" rel="noopener">Metasploit</a><p>Фреймворк для разработки и запуска эксплойтов в разрешённых тестах.</p></li>
-          <li><a href="https://www.cobaltstrike.com/" target="_blank" rel="noopener">Cobalt Strike</a><p>Коммерческая платформа эмуляции противника для зрелых red-team операций.</p></li>
+          <li><a href="tool.html?t=metasploit">Metasploit</a><p>Фреймворк для разработки и запуска эксплойтов в разрешённых тестах.</p></li>
+          <li><a href="tool.html?t=cobaltstrike">Cobalt Strike</a><p>Коммерческая платформа эмуляции противника для зрелых red-team операций.</p></li>
+          <li><a href="tool.html?t=bloodhound">BloodHound</a><p>Граф скрытых путей атаки в Active Directory.</p></li>
+          <li><a href="tool.html?t=empire">Empire</a><p>Фреймворк постэксплуатации и эмуляции противника.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">盾</span>Blue Team</h3>
         <ul>
-          <li><a href="https://wazuh.com/" target="_blank" rel="noopener">Wazuh</a><p>SIEM/XDR с открытым кодом для мониторинга и обнаружения угроз.</p></li>
-          <li><a href="https://suricata.io/" target="_blank" rel="noopener">Suricata</a><p>IDS/IPS реального времени для сетевого трафика.</p></li>
-          <li><a href="https://virustotal.github.io/yara/" target="_blank" rel="noopener">YARA</a><p>Написание сигнатур для обнаружения и классификации вредоносного ПО.</p></li>
+          <li><a href="tool.html?t=wazuh">Wazuh</a><p>SIEM/XDR с открытым кодом для мониторинга и обнаружения угроз.</p></li>
+          <li><a href="tool.html?t=suricata">Suricata</a><p>IDS/IPS реального времени для сетевого трафика.</p></li>
+          <li><a href="tool.html?t=yara">YARA</a><p>Написание сигнатур для обнаружения и классификации вредоносного ПО.</p></li>
+          <li><a href="tool.html?t=ossec">OSSEC</a><p>Хостовая система обнаружения вторжений с открытым кодом.</p></li>
+          <li><a href="tool.html?t=misp">MISP</a><p>Обмен индикаторами компрометации между организациями.</p></li>
         </ul>
       </article>
       <article class="arsenal-cat">
         <h3><span class="jp">鍛</span>DevSecOps</h3>
         <ul>
-          <li><a href="https://semgrep.dev/" target="_blank" rel="noopener">Semgrep</a><p>Статический анализ кода на уязвимости прямо в pull request.</p></li>
-          <li><a href="https://trivy.dev/" target="_blank" rel="noopener">Trivy</a><p>Сканер уязвимостей в контейнерах, IaC и зависимостях.</p></li>
+          <li><a href="tool.html?t=semgrep">Semgrep</a><p>Статический анализ кода на уязвимости прямо в pull request.</p></li>
+          <li><a href="tool.html?t=trivy">Trivy</a><p>Сканер уязвимостей в контейнерах, IaC и зависимостях.</p></li>
+          <li><a href="tool.html?t=dependencycheck">OWASP Dependency-Check</a><p>Поиск известных уязвимостей в зависимостях проекта.</p></li>
+          <li><a href="tool.html?t=gitleaks">Gitleaks</a><p>Поиск закоммиченных секретов и ключей в git-репозиториях.</p></li>
         </ul>
       </article>
     </div>

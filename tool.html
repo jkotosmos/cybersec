@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Инструмент — IAIDO.SEC</title>
+<meta name="description" content="Как использовать инструмент, официальная документация и публичные разборы — додзё IAIDO.SEC.">
+<meta name="theme-color" content="#0a0b0c">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.ipify.org https://api.pwnedpasswords.com; object-src 'none'; base-uri 'self'; form-action 'self';">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230a0b0c'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23ab8f5c' font-family='serif'%3E刃%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<svg class="defs-sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="torii" viewBox="0 0 48 40">
+      <path d="M2 10 L46 10 M2 10 L0 5 M46 10 L48 5 M6 10 V38 M42 10 V38 M2 16 H46 M14 16 V38 M34 16 V38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-icon" aria-hidden="true"><use href="#torii"/></svg>
+      <span class="brand-word-group">
+        <span class="brand-word">IAIDO</span>
+        <span class="brand-sub">SECURITY DOJO</span>
+      </span>
+    </a>
+    <nav class="site-nav" id="siteNav">
+      <ul>
+        <li><a href="index.html#bushido">Кодекс</a></li>
+        <li><a href="index.html#dojo">Додзё</a></li>
+        <li><a href="index.html#arsenal">Арсенал</a></li>
+        <li><a href="index.html#oath">Клятва</a></li>
+      </ul>
+    </nav>
+    <a href="https://github.com/jkotosmos/cybersec" target="_blank" rel="noopener noreferrer" class="btn btn-pill header-cta">Исходники <span aria-hidden="true">→</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="tool-page" id="toolPage">
+    <a href="index.html#arsenal" class="tool-back">← Арсенал</a>
+
+    <div id="toolContent" hidden>
+      <div class="tool-hero">
+        <p class="section-kicker"><span class="jp" id="toolCategoryJp"></span><span id="toolCategory"></span></p>
+        <h1 id="toolName"></h1>
+        <p class="tool-tagline" id="toolTagline"></p>
+        <div class="tool-hero-actions">
+          <a id="toolOfficial" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Официальный сайт <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="tool-body">
+        <h2>О инструменте</h2>
+        <p id="toolDescription" class="tool-description"></p>
+
+        <p class="panel-note tool-legal" id="toolLegal"></p>
+
+        <div id="toolUsageBlock">
+          <h2>С чего начать</h2>
+          <p class="tool-install" id="toolInstall"></p>
+          <ul class="cmd-list" id="toolCommands"></ul>
+        </div>
+
+        <div class="tool-links-grid">
+          <div>
+            <h2>Официальные ресурсы</h2>
+            <ul class="resource-list" id="toolResources"></ul>
+          </div>
+          <div>
+            <h2>Публичные кейсы и разборы</h2>
+            <ul class="resource-list" id="toolReports"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toolNotFound" hidden class="tool-notfound">
+      <h1>Инструмент не найден</h1>
+      <p>Проверьте ссылку или вернитесь в <a href="index.html#arsenal">арсенал</a>.</p>
+    </div>
+
+    <noscript>
+      <p class="tool-noscript">Эта страница собирается на JavaScript. Включите JavaScript, чтобы увидеть содержимое, или откройте <a href="index.html#arsenal">арсенал</a> напрямую.</p>
+    </noscript>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="index.html#top" class="brand brand-footer"><span class="brand-kanji" aria-hidden="true">居合</span><span class="brand-word">IAIDO<span class="brand-dot">.</span>SEC</span></a>
+    <p>Сделано с <span class="jp">心</span> и терминалом · MIT License · <span id="year"></span></p>
+    <p class="disclaimer">Материалы предназначены только для образовательных целей и легитимного тестирования с разрешения владельца системы. Автор не несёт ответственности за неправомерное использование.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх" hidden>
+  <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 15V3M3 8l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+</button>
+
+<script src="js/tool-data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/tool-detail.js" defer></script>
+</body>
+</html>

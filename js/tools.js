@@ -494,8 +494,19 @@
     var list = document.getElementById('reconList');
     if (!btn) return;
 
+    // Строим DOM через textContent, а не innerHTML со строковой конкатенацией —
+    // navigator.userAgent и особенно ответ внешнего API (ip) НЕ доверенные данные,
+    // и не должны попадать в разметку без экранирования.
     function row(label, value){
-      return '<div class="recon-row"><dt>' + label + '</dt><dd>' + (value === undefined || value === null || value === '' ? '—' : value) + '</dd></div>';
+      var wrap = document.createElement('div');
+      wrap.className = 'recon-row';
+      var dt = document.createElement('dt');
+      dt.textContent = label;
+      var dd = document.createElement('dd');
+      dd.textContent = (value === undefined || value === null || value === '') ? '—' : value;
+      wrap.appendChild(dt);
+      wrap.appendChild(dd);
+      return wrap;
     }
 
     btn.addEventListener('click', async function(){
@@ -512,15 +523,19 @@
       if (navigator.deviceMemory) rows.push(row('Память устройства (заявлено)', navigator.deviceMemory + ' ГБ'));
       if (navigator.connection) rows.push(row('Тип соединения', navigator.connection.effectiveType || '—'));
 
+      var ipRow;
       try {
         var res = await fetch('https://api.ipify.org?format=json');
         var data = await res.json();
-        rows.unshift(row('Публичный IP', data.ip));
+        var ip = typeof data.ip === 'string' ? data.ip : '—';
+        ipRow = row('Публичный IP', ip);
       } catch(e){
-        rows.unshift(row('Публичный IP', 'не удалось получить (нет сети или сервис недоступен)'));
+        ipRow = row('Публичный IP', 'не удалось получить (нет сети или сервис недоступен)');
       }
+      rows.unshift(ipRow);
 
-      list.innerHTML = rows.join('');
+      list.textContent = '';
+      rows.forEach(function(r){ list.appendChild(r); });
       btn.disabled = false; btn.textContent = 'Обновить разведку';
     });
   })();
