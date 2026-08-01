@@ -105,6 +105,14 @@
     }
   }
 
+  /* ---------- preview strip cards open matching tool tab ---------- */
+  document.querySelectorAll('[data-open-tool]').forEach(function(card){
+    card.addEventListener('click', function(){
+      var btn = document.getElementById(card.getAttribute('data-open-tool'));
+      if (btn) setTimeout(function(){ btn.click(); }, reduceMotion ? 0 : 400);
+    });
+  });
+
   /* ---------- waza (tool) tab switching ---------- */
   var wazaBtns = document.querySelectorAll('.waza-btn');
   var wazaPanels = document.querySelectorAll('.waza-panel');

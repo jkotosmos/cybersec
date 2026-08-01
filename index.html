@@ -48,6 +48,18 @@
       <rect x="4" y="4" width="92" height="92" rx="6" fill="none" stroke="currentColor" stroke-width="5"/>
       <text x="50" y="66" text-anchor="middle" font-size="52" font-family="'Noto Serif JP', serif" fill="currentColor">匠</text>
     </symbol>
+    <symbol id="torii" viewBox="0 0 48 40">
+      <path d="M2 10 L46 10 M2 10 L0 5 M46 10 L48 5 M6 10 V38 M42 10 V38 M2 16 H46 M14 16 V38 M34 16 V38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15181c"/>
+      <stop offset="45%" stop-color="#101215"/>
+      <stop offset="100%" stop-color="#0a0b0c"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a3f45" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#3a3f45" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 </svg>
 
@@ -55,18 +67,22 @@
 <header class="site-header" id="top">
   <div class="header-inner">
     <a href="#top" class="brand">
-      <span class="brand-kanji" aria-hidden="true">居合</span>
-      <span class="brand-word">IAIDO<span class="brand-dot">.</span>SEC</span>
+      <svg class="brand-icon" aria-hidden="true"><use href="#torii"/></svg>
+      <span class="brand-word-group">
+        <span class="brand-word">IAIDO</span>
+        <span class="brand-sub">SECURITY DOJO</span>
+      </span>
     </a>
     <nav class="site-nav" id="siteNav">
       <ul>
-        <li><a href="#bushido"><span class="jp">七徳</span>Кодекс</a></li>
-        <li><a href="#dojo"><span class="jp">道場</span>Додзё</a></li>
-        <li><a href="#arsenal"><span class="jp">武器庫</span>Арсенал</a></li>
-        <li><a href="#oath"><span class="jp">誓約</span>Клятва</a></li>
-        <li><a href="#about"><span class="jp">匠</span>Автор</a></li>
+        <li><a href="#bushido">Кодекс</a></li>
+        <li><a href="#dojo">Додзё</a></li>
+        <li><a href="#arsenal">Арсенал</a></li>
+        <li><a href="#oath">Клятва</a></li>
+        <li><a href="#about">Автор</a></li>
       </ul>
     </nav>
+    <a href="https://github.com/jkotosmos/cybersec" target="_blank" rel="noopener" class="btn btn-pill header-cta">Исходники <span aria-hidden="true">→</span></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
       <span></span><span></span><span></span>
     </button>
@@ -77,20 +93,79 @@
 
   <!-- ============ hero ============ -->
   <section class="hero" id="hero">
-    <span class="hero-watermark" aria-hidden="true">刃</span>
-    <div class="hero-inner">
-      <p class="eyebrow"><span class="jp">居合道</span><span class="rule"></span>iaidō — искусство обнажения клинка</p>
-      <h1 class="hero-title">Путь клинка<br>в&nbsp;мире кода</h1>
-      <p class="hero-lede">Между нажатием клавиши и обнажением клинка нет разницы — оба решают всё за долю секунды, и оба требуют дисциплины, которую нельзя подделать. IAIDO — додзё для тех, кто защищает системы: философия, честные инструменты и арсенал ремесла.</p>
+    <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="1600" height="900" fill="url(#skyGrad)"/>
+      <circle cx="1230" cy="230" r="220" fill="url(#moonGlow)"/>
+      <circle cx="1230" cy="230" r="58" fill="#e7e8ea" opacity=".92"/>
+      <path class="mountain mountain-far" d="M0 480 L180 390 360 460 560 370 780 470 980 400 1200 465 1400 410 1600 460 1600 900 0 900 Z"/>
+      <path class="mountain mountain-near" d="M0 560 L220 495 440 545 660 480 880 550 1120 495 1360 545 1600 505 1600 900 0 900 Z"/>
+      <rect x="0" y="430" width="1600" height="50" fill="#0a0b0c" opacity=".35"/>
+      <g class="pagoda">
+        <polygon class="body" points="1171.1,560.0 1288.9,560.0 1288.9,526.0 1171.1,526.0"/>
+        <polygon class="roof" points="1129.6,532.0 1135.0,526.0 1190.1,500.0 1269.9,500.0 1325.0,526.0 1330.4,532.0 1322.3,522.0 1267.9,504.0 1192.1,504.0 1137.7,522.0"/>
+        <polygon class="body" points="1184.1,500.0 1275.9,500.0 1275.9,466.0 1184.1,466.0"/>
+        <polygon class="roof" points="1150.5,472.0 1155.9,466.0 1198.9,440.0 1261.1,440.0 1304.1,466.0 1309.5,472.0 1301.4,462.0 1259.1,444.0 1200.9,444.0 1158.6,462.0"/>
+        <polygon class="body" points="1194.2,440.0 1265.8,440.0 1265.8,406.0 1194.2,406.0"/>
+        <polygon class="roof" points="1166.8,412.0 1172.2,406.0 1205.7,380.0 1254.3,380.0 1287.8,406.0 1293.2,412.0 1285.1,402.0 1252.3,384.0 1207.7,384.0 1174.9,402.0"/>
+        <polygon class="body" points="1202.0,380.0 1258.0,380.0 1258.0,346.0 1202.0,346.0"/>
+        <polygon class="roof" points="1179.5,352.0 1184.9,346.0 1211.1,320.0 1248.9,320.0 1275.1,346.0 1280.5,352.0 1272.4,342.0 1246.9,324.0 1213.1,324.0 1187.6,342.0"/>
+        <polygon class="spire" points="1215.2,320.0 1244.8,320.0 1230.0,240.0"/>
+      </g>
+      <rect x="0" y="560" width="1600" height="340" fill="#050506" opacity=".5"/>
+
+      <g class="sakura" stroke="#5a3730" stroke-width="2.4" fill="none" opacity=".65">
+        <path d="M760 20 C830 60 800 130 880 170 C930 200 960 180 1000 205"/>
+      </g>
+      <g class="petal petal-1"><ellipse cx="860" cy="90" rx="9" ry="5" fill="#8a4a42" transform="rotate(30 860 90)"/></g>
+      <g class="petal petal-2"><ellipse cx="930" cy="150" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(-20 930 150)"/></g>
+      <g class="petal petal-3"><ellipse cx="810" cy="200" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(60 810 200)"/></g>
+      <g class="petal petal-4"><ellipse cx="1000" cy="260" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(10 1000 260)"/></g>
+      <g class="petal petal-5"><ellipse cx="720" cy="120" rx="7" ry="4" fill="#8a4a42" transform="rotate(-40 720 120)"/></g>
+
+      <g class="teaser-blade" transform="translate(520,660) rotate(-18)">
+        <ellipse cx="420" cy="60" rx="480" ry="46" fill="#000" opacity=".4"/>
+        <path d="M0 -3 L680 -22 L680 22 L0 3 Z" fill="url(#steelGrad)" stroke="#3d4145" stroke-width="1.5"/>
+        <path d="M30 -1 L650 -18" stroke="#4c5257" stroke-width="1.6" opacity=".6"/>
+        <ellipse cx="700" cy="0" rx="13" ry="32" fill="url(#goldGrad)" stroke="#3a2c0d" stroke-width="1.6"/>
+        <rect x="715" y="-15" width="135" height="30" rx="4" fill="#1a1712" stroke="#080706" stroke-width="1.2"/>
+        <g stroke="#3a3226" stroke-width="2.2" opacity=".85">
+          <path d="M720 -15 L755 15 M755 -15 L720 15 M760 -15 L795 15 M795 -15 L760 15 M800 -15 L835 15 M835 -15 L800 15"/>
+        </g>
+        <ellipse cx="865" cy="0" rx="10" ry="15" fill="url(#goldGrad)" stroke="#3a2c0d" stroke-width="1.3"/>
+      </g>
+    </svg>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="rule"></span>комплексная защита цифрового ронина</p>
+      <h1 class="hero-title">Информационная<br>безопасность</h1>
+      <p class="hero-lede">Между нажатием клавиши и обнажением клинка нет разницы — оба решают всё за долю секунды. IAIDO — додзё для тех, кто защищает системы: философия бусидо, честные инструменты и арсенал ремесла.</p>
       <div class="hero-actions">
-        <a href="#dojo" class="btn btn-primary">В додзё инструментов</a>
-        <a href="#bushido" class="btn btn-ghost">Кодекс чести</a>
+        <a href="#dojo" class="btn btn-primary">Подробнее <span aria-hidden="true">↗</span></a>
+        <a href="#bushido" class="btn btn-square" aria-label="Кодекс чести"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M1 1h5M1 1v5M15 1h-5M15 1v5M1 15h5M1 15v-5M15 15h-5M15 15v-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true">
       <span>листайте, чтобы обнажить клинок</span>
       <svg width="14" height="24" viewBox="0 0 14 24"><path d="M7 1v20M1 15l6 7 6-7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
     </div>
+  </section>
+
+  <!-- ============ tools preview strip ============ -->
+  <section class="preview-strip" id="previewStrip" aria-label="Наши инструменты">
+    <div class="preview-head">
+      <p class="section-kicker">Наши инструменты</p>
+    </div>
+    <div class="preview-grid">
+      <a class="preview-card" href="#dojo" data-open-tool="tab-gen"><span class="pc-num">01</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="M11 11L21 21M15 15l3 3M18 12l3 3"/></svg><h3>Генератор паролей</h3><p>Криптографически случайные пароли прямо в браузере.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-strength"><span class="pc-num">02</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16a9 9 0 0 1 18 0"/><path d="M12 16l5-7"/><circle cx="12" cy="16" r="1.3" fill="currentColor" stroke="none"/></svg><h3>Прочность пароля</h3><p>Энтропия по Шеннону и честная оценка времени взлома.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-hash"><span class="pc-num">03</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h14M5 15h14M9 3L7 21M17 3l-2 18"/></svg><h3>Hash Forge</h3><p>SHA-1/256/384/512 для текста и файлов.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-pwned"><span class="pc-num">04</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M8.5 12.5l2.4 2.4L16 9.5"/></svg><h3>Проверка утечек</h3><p>k-anonymity запрос к Have I Been Pwned.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-cipher"><span class="pc-num">05</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg><h3>Клинок шифров</h3><p>Цезарь, Виженер, XOR и настоящий AES-256-GCM.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-convert"><span class="pc-num">06</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5L2 12l6 7M16 5l6 7-6 7"/></svg><h3>Base64 / Hex / URL</h3><p>UTF-8-безопасный конвертер форматов.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-jwt"><span class="pc-num">07</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg><h3>JWT Инспектор</h3><p>Разбор токена без ложных обещаний проверки подписи.</p></a>
+      <a class="preview-card" href="#dojo" data-open-tool="tab-recon"><span class="pc-num">08</span><span class="pc-arrow">↗</span><svg class="pc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><h3>Разведка (Recon)</h3><p>Что о вас пассивно знает браузер.</p></a>
+    </div>
+    <p class="preview-stack">Собрано на честной статике: <span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>Web Crypto API</span><span>GitHub Pages</span></p>
   </section>
 
   <!-- ============ draw stage (scroll-linked katana) ============ -->
