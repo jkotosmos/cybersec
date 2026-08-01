@@ -51,49 +51,6 @@
     <symbol id="torii" viewBox="0 0 48 40">
       <path d="M2 10 L46 10 M2 10 L0 5 M46 10 L48 5 M6 10 V38 M42 10 V38 M2 16 H46 M14 16 V38 M34 16 V38" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
     </symbol>
-    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#15181c"/>
-      <stop offset="45%" stop-color="#101215"/>
-      <stop offset="100%" stop-color="#0a0b0c"/>
-    </linearGradient>
-    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#3a3f45" stop-opacity=".55"/>
-      <stop offset="100%" stop-color="#3a3f45" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="heroBladeGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#484d51"/>
-      <stop offset="16%" stop-color="#7c828a"/>
-      <stop offset="30%" stop-color="#d8dde1"/>
-      <stop offset="38%" stop-color="#f5f7f8"/>
-      <stop offset="46%" stop-color="#9ba1a7"/>
-      <stop offset="62%" stop-color="#5c6167"/>
-      <stop offset="82%" stop-color="#83898f"/>
-      <stop offset="100%" stop-color="#33373b"/>
-    </linearGradient>
-    <linearGradient id="heroTsubaGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#8f7645"/>
-      <stop offset="45%" stop-color="#4d3d22"/>
-      <stop offset="70%" stop-color="#b89a5c"/>
-      <stop offset="100%" stop-color="#362a17"/>
-    </linearGradient>
-    <linearGradient id="heroTsukaGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#26211b"/>
-      <stop offset="45%" stop-color="#100d0a"/>
-      <stop offset="55%" stop-color="#0c0a08"/>
-      <stop offset="100%" stop-color="#221d17"/>
-    </linearGradient>
-    <linearGradient id="heroFogFade" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#171a1e" stop-opacity=".78"/>
-      <stop offset="30%" stop-color="#171a1e" stop-opacity=".3"/>
-      <stop offset="55%" stop-color="#171a1e" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#171a1e" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="7"/>
-    </filter>
-    <clipPath id="heroBladeClip">
-      <path d="M0 -3.4 C110 -6.4 260 -10.6 420 -15.4 C520 -18.4 610 -20.7 680 -22.4 L680 22.4 C610 20.7 520 18.4 420 15.4 C260 10.6 110 6.4 0 3.4 Z"/>
-    </clipPath>
   </defs>
 </svg>
 
@@ -127,75 +84,7 @@
 
   <!-- ============ hero ============ -->
   <section class="hero" id="hero">
-    <svg class="hero-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <rect width="1600" height="900" fill="url(#skyGrad)"/>
-      <circle cx="1230" cy="230" r="220" fill="url(#moonGlow)"/>
-      <circle cx="1230" cy="230" r="58" fill="#e7e8ea" opacity=".92"/>
-      <path class="mountain mountain-far" d="M0 480 L180 390 360 460 560 370 780 470 980 400 1200 465 1400 410 1600 460 1600 900 0 900 Z"/>
-      <path class="mountain mountain-near" d="M0 560 L220 495 440 545 660 480 880 550 1120 495 1360 545 1600 505 1600 900 0 900 Z"/>
-      <rect x="0" y="430" width="1600" height="50" fill="#0a0b0c" opacity=".35"/>
-      <g class="pagoda">
-        <polygon class="body" points="1171.1,560.0 1288.9,560.0 1288.9,526.0 1171.1,526.0"/>
-        <polygon class="roof" points="1129.6,532.0 1135.0,526.0 1190.1,500.0 1269.9,500.0 1325.0,526.0 1330.4,532.0 1322.3,522.0 1267.9,504.0 1192.1,504.0 1137.7,522.0"/>
-        <polygon class="body" points="1184.1,500.0 1275.9,500.0 1275.9,466.0 1184.1,466.0"/>
-        <polygon class="roof" points="1150.5,472.0 1155.9,466.0 1198.9,440.0 1261.1,440.0 1304.1,466.0 1309.5,472.0 1301.4,462.0 1259.1,444.0 1200.9,444.0 1158.6,462.0"/>
-        <polygon class="body" points="1194.2,440.0 1265.8,440.0 1265.8,406.0 1194.2,406.0"/>
-        <polygon class="roof" points="1166.8,412.0 1172.2,406.0 1205.7,380.0 1254.3,380.0 1287.8,406.0 1293.2,412.0 1285.1,402.0 1252.3,384.0 1207.7,384.0 1174.9,402.0"/>
-        <polygon class="body" points="1202.0,380.0 1258.0,380.0 1258.0,346.0 1202.0,346.0"/>
-        <polygon class="roof" points="1179.5,352.0 1184.9,346.0 1211.1,320.0 1248.9,320.0 1275.1,346.0 1280.5,352.0 1272.4,342.0 1246.9,324.0 1213.1,324.0 1187.6,342.0"/>
-        <polygon class="spire" points="1215.2,320.0 1244.8,320.0 1230.0,240.0"/>
-      </g>
-      <rect x="0" y="560" width="1600" height="340" fill="#050506" opacity=".5"/>
-
-      <g class="sakura" stroke="#5a3730" stroke-width="2.4" fill="none" opacity=".65">
-        <path d="M760 20 C830 60 800 130 880 170 C930 200 960 180 1000 205"/>
-      </g>
-      <g class="petal petal-1"><ellipse cx="860" cy="90" rx="9" ry="5" fill="#8a4a42" transform="rotate(30 860 90)"/></g>
-      <g class="petal petal-2"><ellipse cx="930" cy="150" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(-20 930 150)"/></g>
-      <g class="petal petal-3"><ellipse cx="810" cy="200" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(60 810 200)"/></g>
-      <g class="petal petal-4"><ellipse cx="1000" cy="260" rx="8" ry="4.5" fill="#8a4a42" transform="rotate(10 1000 260)"/></g>
-      <g class="petal petal-5"><ellipse cx="720" cy="120" rx="7" ry="4" fill="#8a4a42" transform="rotate(-40 720 120)"/></g>
-
-      <g class="teaser-blade" transform="translate(520,660) rotate(-18)">
-        <ellipse cx="360" cy="58" rx="440" ry="34" fill="#000" opacity=".5" filter="url(#softBlur)"/>
-
-        <!-- blade: gentle curve, faceted steel gradient across the cross-section -->
-        <path class="hb-blade" d="M0 -3.4 C110 -6.4 260 -10.6 420 -15.4 C520 -18.4 610 -20.7 680 -22.4 L680 22.4 C610 20.7 520 18.4 420 15.4 C260 10.6 110 6.4 0 3.4 Z"
-              fill="url(#heroBladeGrad)" stroke="#2b2e31" stroke-width="1.2"/>
-        <!-- shinogi ridge highlight -->
-        <path d="M14 -1.2 C150 -4.4 320 -8.7 460 -12.6 C540 -14.9 610 -16.9 668 -18.3" fill="none" stroke="#fbfcfc" stroke-width="1.3" opacity=".55" stroke-linecap="round"/>
-        <!-- mune back-edge rim light -->
-        <path d="M6 -3.1 C130 -6 300 -10.2 450 -14.7 C540 -17.4 615 -19.6 676 -21.4" fill="none" stroke="#ffffff" stroke-width=".8" opacity=".4" stroke-linecap="round"/>
-        <!-- atmospheric fade toward the tip, so it recedes into the mist -->
-        <rect x="-10" y="-30" width="300" height="60" fill="url(#heroFogFade)" clip-path="url(#heroBladeClip)"/>
-
-        <!-- tsuba: layered bronze guard with rivets -->
-        <ellipse cx="700" cy="0" rx="15" ry="34" fill="url(#heroTsubaGrad)" stroke="#241b0e" stroke-width="1.6"/>
-        <ellipse cx="700" cy="0" rx="10.5" ry="26" fill="none" stroke="#c9a95f" stroke-width=".7" opacity=".5"/>
-        <ellipse cx="700" cy="0" rx="4" ry="9" fill="#161006"/>
-        <circle cx="700" cy="-19" r="1.6" fill="#0e0a05"/>
-        <circle cx="700" cy="19" r="1.6" fill="#0e0a05"/>
-
-        <!-- tsuka: diamond ito-maki wrap with samegawa peeking through + menuki -->
-        <rect x="715" y="-16" width="142" height="32" rx="4" fill="url(#heroTsukaGrad)" stroke="#050403" stroke-width="1.2"/>
-        <g fill="#cfc6ae" opacity=".55">
-          <polygon points="733,0 739,-6 745,0 739,6"/>
-          <polygon points="757,0 763,-6 769,0 763,6"/>
-          <polygon points="781,0 787,-6 793,0 787,6"/>
-          <polygon points="805,0 811,-6 817,0 811,6"/>
-          <polygon points="829,0 835,-6 841,0 835,6"/>
-        </g>
-        <g stroke="#181410" stroke-width="2.4" opacity=".92" stroke-linecap="round">
-          <path d="M718 -16 L739 6 M739 -16 L718 6 M745 -16 L763 6 M763 -16 L745 6 M769 -16 L787 6 M787 -16 L769 6 M793 -16 L811 6 M811 -16 L793 6 M817 -16 L835 6 M835 -16 L817 6 M841 -16 L854 -1 M854 -16 L841 2"/>
-        </g>
-        <ellipse cx="745" cy="0" rx="3.4" ry="2.4" fill="url(#heroTsubaGrad)" opacity=".9" transform="rotate(90 745 0)"/>
-        <ellipse cx="803" cy="0" rx="3.4" ry="2.4" fill="url(#heroTsubaGrad)" opacity=".9" transform="rotate(90 803 0)"/>
-
-        <!-- kashira pommel -->
-        <ellipse cx="866" cy="0" rx="11" ry="16" fill="url(#heroTsubaGrad)" stroke="#241b0e" stroke-width="1.3"/>
-        <ellipse cx="866" cy="0" rx="6" ry="9" fill="none" stroke="#c9a95f" stroke-width=".6" opacity=".5"/>
-      </g>
-    </svg>
+    <img class="hero-scene" src="assets/img/hero-katana.jpg" alt="" fetchpriority="high">
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-copy">
       <p class="eyebrow"><span class="rule"></span>комплексная защита цифрового ронина</p>
